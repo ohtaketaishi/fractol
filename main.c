@@ -20,13 +20,33 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
 }
+double	mandelbrot(double a, double b)
+{
+	double x = 0.0;
+	double y = 0.0;
+	double x1, y1;
+
+	int n = 0;
+
+	while (n < 20)
+	{
+		x1 = x * x - y * y + a;
+		y1 = 2.0 * x * y + b;
+		if ( x1 * x1 + y1 * y1 > 4.0)
+			return (0);
+		x = x1;
+		y = y1;
+		n++;
+	}
+	return (1);
+}
 
 void	full_img(t_data img)
 {
-	int x;
-	int y;
-	int a;
-	int b;
+	double x;
+	double y;
+	double a;
+	double b;
 
 	y = 0;
 	while (y < 1000)
@@ -34,10 +54,14 @@ void	full_img(t_data img)
 		x = 0;
 		while (x < 1000)
 		{
+			//a = x/250 - 3.0;
+			//b = y/250 - 2.0;
 			a = x - 500;
 			b = y - 500;
 			if (((a*a) + (b*b)) < (500*500))
 				my_mlx_pixel_put(&img, x, y, 0x00FF0000);
+		//	if (mandelbrot(a, b))
+		//		my_mlx_pixel_put(&img, x, y, 0x00FF0000);
 			x++;
 		}
 		y++;
