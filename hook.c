@@ -10,13 +10,13 @@ int	mouse_hook(int keycode, int x, int y, t_p *p)
 	if (keycode == MOUSE_UP)
 	{
 		p->zoom *= 1.1;
-		//p->max_n += 10;
+		p->max_n += 10;
 		printf("max_n:%d\n", p->max_n);
 	}
 	else if (keycode == MOUSE_DOWN)
 	{
 		p->zoom *= 0.9;
-		//p->max_n -= 10;
+		p->max_n -= 10;
 		if (p->max_n <= 100)
 			p->max_n = 100;
 		printf("max_n:%d\n", p->max_n);
@@ -32,7 +32,7 @@ int	key_hook(int keycode, t_p *p)
 	if (keycode == ESC_KEY)
 	{
 		mlx_destroy_window(p->mlx, p->win);
-		system("leaks fractol");
+		//system("leaks fractol");
 		exit(EXIT_FAILURE);
 	}
 	else if (keycode == LEFT_KEY)
@@ -51,7 +51,7 @@ int	key_hook(int keycode, t_p *p)
 
 int	close_hook(void)
 {
-	system("leaks fractol");
+	//system("leaks fractol");
 	exit(EXIT_FAILURE);
 	return (0);
 }

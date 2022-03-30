@@ -2,7 +2,7 @@ NAME = fractol
 
 CFLAGS = -Wall -Werror -Wextra -fsanitize=address
 
-SRCS = main.c hook.c mandelbrot.c julia.c burningship.c color.c
+SRCS = main.c hook.c mandelbrot.c julia.c burningship.c color.c utils.c
 
 OBJS = $(SRCS:.c=.o)
 

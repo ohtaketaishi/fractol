@@ -63,11 +63,6 @@ void	draw_julia(t_p *p);
 int julia(t_p *p, double nx, double ny);
 
 //other
-void	init(t_p *p);
-void	pixel_put(t_p *p, double x, double y, int n);
-void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
-int		n_to_HSV(int n);
-int		ft_strcmp(char *s1, char *s2);
 int	check_av(char *av);
 void draw_fractol(t_p *p);
 
@@ -82,4 +77,9 @@ double	ft_abs(double num);
 int	burningship(t_p *p, double cx, double cy);
 void	draw_burningship(t_p *p);
 
+//utils.c
+int		ft_strcmp(char *s1, char *s2);
+void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
+void	pixel_put(t_p *p, double x, double y, int n);
+void	init(t_p *p);
 #endif
