@@ -1,4 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   julia.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ootaketaishi <marvin@42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/31 01:56:12 by ootaketai         #+#    #+#             */
+/*   Updated: 2022/03/31 01:56:14 by ootaketai        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
+
+void	chose_julia(t_p *p, char *av)
+{
+	if (!ft_strcmp(av, "julia1"))
+	{
+		p->fractol = JULIA1;
+		p->cx = -0.7;
+		p->cy = -0.27015;
+	}
+	else if (!ft_strcmp(av, "julia2"))
+	{
+		p->fractol = JULIA2;
+		p->cx = -0.3842;
+		p->cy = -0.70176;
+	}
+	else if (!ft_strcmp(av, "julia3"))
+	{
+		p->fractol = JULIA3;
+		p->cx = 0.4;
+		p->cy = 0.325;
+	}
+}
 
 int	julia(t_p *p, double nx, double ny)
 {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   burningship.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ootaketaishi <marvin@42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/31 01:58:55 by ootaketai         #+#    #+#             */
+/*   Updated: 2022/03/31 01:59:23 by ootaketai        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 double	ft_abs(double num)
@@ -47,7 +59,7 @@ void	draw_burningship(t_p *p)
 		x = 0;
 		while (x < WIDTH)
 		{
-			cx = 1.5 * (x - WIDTH / 2) / (WIDTH * 0.3 *p->zoom) - p->move_x;
+			cx = 1.5 * (x - WIDTH / 2) / (WIDTH * 0.3 * p->zoom) - p->move_x;
 			cy = (y - HEIGHT / 2) / (HEIGHT * 0.3 * p->zoom) - p->move_y;
 			pixel_put(p, x, y, burningship(p, cx, cy));
 			x++;

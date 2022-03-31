@@ -1,6 +1,6 @@
 NAME = fractol
 
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 
 SRCS = main.c hook.c mandelbrot.c julia.c burningship.c color.c utils.c
 
