@@ -6,21 +6,20 @@
 /*   By: ootaketaishi <marvin@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 02:00:28 by ootaketai         #+#    #+#             */
-/*   Updated: 2022/04/05 04:40:36 by ootaketai        ###   ########.fr       */
+/*   Updated: 2022/04/05 07:18:43 by otaishi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include <stdio.h> //printf
 # include <unistd.h> //write
 # include <math.h> // pow
 # include <mlx.h> //mlx...
 # include <stdlib.h> //exit EXIT_SUCCESS..
 
-# define WIDTH 800//8004:3
-# define HEIGHT 600//600
+# define WIDTH 800//4:3
+# define HEIGHT 600//
 # define C_KEY 8
 # define LEFT_KEY 123
 # define RIGHT_KEY 124

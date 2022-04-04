@@ -6,7 +6,7 @@
 /*   By: ootaketaishi <marvin@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 01:49:05 by ootaketai         #+#    #+#             */
-/*   Updated: 2022/04/05 04:42:44 by ootaketai        ###   ########.fr       */
+/*   Updated: 2022/04/05 07:13:33 by otaishi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	key_hook(int keycode, t_p *p)
 	if (keycode == ESC_KEY)
 	{
 		mlx_destroy_window(p->mlx, p->win);
-		//system("leaks fractol");
 		exit(EXIT_SUCCESS);
 	}
 	else if (keycode == LEFT_KEY)
@@ -58,7 +57,6 @@ int	key_hook(int keycode, t_p *p)
 int	close_hook(t_p *p)
 {
 	mlx_destroy_window(p->mlx, p->win);
-	//system("leaks fractol");
 	exit(EXIT_SUCCESS);
 	return (0);
 }
