@@ -6,7 +6,7 @@
 /*   By: ootaketaishi <marvin@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 02:00:28 by ootaketai         #+#    #+#             */
-/*   Updated: 2022/03/31 03:07:51 by ootaketai        ###   ########.fr       */
+/*   Updated: 2022/04/05 04:40:36 by ootaketai        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h> //write
 # include <math.h> // pow
 # include <mlx.h> //mlx...
-# include <stdlib.h> //exit
+# include <stdlib.h> //exit EXIT_SUCCESS..
 
 # define WIDTH 800//8004:3
 # define HEIGHT 600//600
@@ -77,7 +77,7 @@ void	init(t_p *p);
 //hook.c
 int		mouse_hook(int keycode, int x, int y, t_p *p);
 int		key_hook(int keycode, t_p *p);
-int		close_hook(void);
+int		close_hook(t_p *p);
 void	julia_change(int keycode, t_p *p);
 
 //coler

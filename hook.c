@@ -6,7 +6,7 @@
 /*   By: ootaketaishi <marvin@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 01:49:05 by ootaketai         #+#    #+#             */
-/*   Updated: 2022/03/31 03:08:59 by ootaketai        ###   ########.fr       */
+/*   Updated: 2022/04/05 04:42:44 by ootaketai        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	mouse_hook(int keycode, int x, int y, t_p *p)
 	if (keycode == MOUSE_UP)
 	{
 		p->zoom *= 1.1;
-		p->max_n += 10;
+		p->max_n += 5;
 	}
 	else if (keycode == MOUSE_DOWN)
 	{
 		p->zoom *= 0.9;
-		p->max_n -= 10;
+		p->max_n -= 5;
 		if (p->max_n <= 100)
 			p->max_n = 100;
 	}
@@ -38,7 +38,7 @@ int	key_hook(int keycode, t_p *p)
 	{
 		mlx_destroy_window(p->mlx, p->win);
 		//system("leaks fractol");
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
 	else if (keycode == LEFT_KEY)
 		p->move_x += 0.1 / p->zoom;
@@ -55,10 +55,11 @@ int	key_hook(int keycode, t_p *p)
 	return (0);
 }
 
-int	close_hook(void)
+int	close_hook(t_p *p)
 {
+	mlx_destroy_window(p->mlx, p->win);
 	//system("leaks fractol");
-	exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
 

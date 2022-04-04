@@ -6,7 +6,7 @@
 /*   By: ootaketaishi <marvin@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 01:43:53 by ootaketai         #+#    #+#             */
-/*   Updated: 2022/03/31 03:02:55 by ootaketai        ###   ########.fr       */
+/*   Updated: 2022/04/05 06:07:37 by ootaketai        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,16 @@ void	pixel_put(t_p *p, double x, double y, int n)
 void	init(t_p *p)
 {
 	p->mlx = mlx_init();
+	if (!p->mlx)
+		exit(EXIT_FAILURE);
 	p->win = mlx_new_window(p->mlx, WIDTH, HEIGHT, "fractol");
+	if (!p->win)
+		exit(EXIT_FAILURE);
 	p->img.img = mlx_new_image(p->mlx, WIDTH, HEIGHT);
+	if (!p->img.img)
+		exit(EXIT_FAILURE);
 	p->img.addr = mlx_get_data_addr(p->img.img,
-	&p->img.bits_per_pixel,&p->img.line_length, &p->img.endian);
+			&p->img.bits_per_pixel, &p->img.line_length, &p->img.endian);
 	p->move_x = 0.0;
 	p->move_y = 0.0;
 	p->max_n = 100;
